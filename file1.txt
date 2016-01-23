@@ -1,3 +1,18 @@
 
-this is the first file
-in the repository.
+#dockerfile for freeCAD
+FROM ubuntu:15.10
+
+MAINTAINER Hazia fernandes
+
+# Install the build dependencies
+RUN apt-get update -y && \
+	apt-get install -y python-dev \
+	wget \
+	git \
+	build-essential \
+	freecad
+
+#git clone
+RUN git clone https://github.com/FreeCAD/FreeCAD.git
+
+WORKDIR /home/intern
